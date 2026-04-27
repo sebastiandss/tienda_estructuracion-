@@ -8,6 +8,7 @@ import CartPanel from '../components/storefront/CartPanel';
 import MobileNav from '../components/storefront/MobileNav';
 import ToastContainer from '../components/storefront/ToastContainer';
 import SavedGrid from '../components/storefront/SavedGrid';
+import CartView from '../components/storefront/CartView';
 
 const StorefrontContent = () => {
   const { setShowSortMenu, currentView } = useStore();
@@ -19,6 +20,8 @@ const StorefrontContent = () => {
       <main className="main">
         {currentView === 'saved' ? (
           <SavedGrid />
+        ) : currentView === 'cart' ? (
+          <CartView />
         ) : (
           <div className="layout-wrap">
             <ProductList />
